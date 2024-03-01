@@ -2,6 +2,9 @@
 
 class Jeu:
     def __init__(self) -> None:
+        self.joueurs : list[Joueur] = []
+
+    def jouer(self):
         pass
 
 
@@ -10,9 +13,9 @@ class Joueur:
     # initialisation liste de pokemon vide 
     def __init__(self) -> None:
         self.nom : str = ""
-        self.manche_gagnée : int = 0
+        self.manche_gagnee : int = 0
         self.argent : int = 0
-        self.pokemons : list = []
+        self.pokemons : list = [Pokemon]
 
     
     def choisir_pokemon(self):
@@ -26,9 +29,17 @@ class Joueur:
     
     def recuperer_pokemon(self):
         pass
+
     def afficher_pokemons(self):
-        pass
+        if(self.pokemons.count() > 0):
+            for pokemon  in self.pokemons :
+                print(f"{pokemon.name}, Type : {pokemon.type}, PV : {pokemon.point_de_vie}, Niveau {pokemon.niveau}")
+        else :
+            print(f"{self.name} ne possède pas de Pokémon.")
+
     def afficher(self):
+        # à voir pour rajouter un if self is not None
+        print(f"Informations de {self.nom} : \n Manche gagnée : {self.manche_gagnee} \n Argent : {self.argent} \n")
         pass
 
 class Pokemon:
@@ -45,7 +56,7 @@ class Pokemon:
         self.defense : int 
         self.defense_speciale : int 
         self.vitesse : int 
-        self.attaques : list = []
+        self.attaques : list[Attaque] = []
 
     def ajouter_attaque(self, attaque):
         if (self.attaques.count() <= 4):
@@ -61,7 +72,7 @@ class Pokemon:
         else :
             print(f"{self.nom} ne possède pas l'attaque {attaque.nom}")        
     
-    def attaquer(self, pokemon, attaque):
+    def attaquer(self, pokemon_cible, attaque):
         pass
     
     def est_ko(self) -> bool:
@@ -78,7 +89,8 @@ class Pokemon:
             print(f"{self.nom} ne possède aucune attaque.")
 
     def afficher(self):
-        print(f"Caractéristique de {self.nom} : \n Pokémon de type {self.type1} {self.type2} \n PV : {self.point_de_vie} \n Niveau {self.niveau} \n")
+        # à voir pour rajouter un if self is not None
+        print(f"Caractéristique de {self.nom} : \n Pokémon de type {self.type1} {self.type2} \n PV : {self.point_de_vie} \n Niveau {self.niveau} \n" )
 
 class Attaque:
     def __init__(self) -> None:
@@ -89,5 +101,33 @@ class Attaque:
         self.puissance : int 
         self.pp : int 
 
-    def calculer_degats(self):
-        pass
+    def calculer_degats(self, pokemon_attaquant, pokemon_cible) -> int:
+        degats : int = 0 
+
+        if(pokemon_attaquant is not None and pokemon_cible is not None):
+            degats =int((( pokemon_attaquant.niveau * 0.4 + 2)  
+                        * self.puissance)
+                        ) # Formule de calcul de dégats 
+            
+            if (self.categorie_attaque == "physique"):
+                degats =int((((degats) 
+                    * pokemon_attaquant.attaque )
+                    /(pokemon_cible.defense * 50)
+                    ) + 2)
+            elif (self.categorie_attaque == "speciale"):
+                degats =int((((degats) 
+                    * pokemon_attaquant.attaque_speciale )
+                    /(pokemon_cible.defense_speciale * 50)
+                    ) + 2)
+            else:
+                print("L'attaque de caractéristique doit être physique ou spéciale.")
+        else:
+            print("Un des pokemon fourni n'existe pas")
+
+        # Pour gérer le STAB 
+        if (pokemon_attaquant.type1 == self.type or pokemon_attaquant.type2 == self.type): 
+            degats = int(degats) * 1.5
+
+        #TODO Faire en sorte de gérer la table des types
+             
+        return degats
