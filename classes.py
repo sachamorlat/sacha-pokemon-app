@@ -47,20 +47,38 @@ class Pokemon:
         self.vitesse : int 
         self.attaques : list = []
 
-    def ajouter_attaque(self):
+    def ajouter_attaque(self, attaque):
+        if (self.attaques.count() <= 4):
+            self.attaques.append(attaque)
+            print(f"L'attaque {attaque.nom} a bien été ajoutée aux attaques de {self.nom}")
+        else :
+            print(f"{self.nom} possède déjà le nombre d'attaque maximal. Veuillez oublier une capacité pour lui en apprendre une autre.")
+
+    def oublier_attaque(self, attaque):
+        if self.attaques.__contains__(attaque):
+            self.attaques.remove(attaque)
+            print(f"{self.nom} a bien oublié l'attaque {attaque.nom}")
+        else :
+            print(f"{self.nom} ne possède pas l'attaque {attaque.nom}")        
+    
+    def attaquer(self, pokemon, attaque):
         pass
     
-    def attaquer(self):
-        pass
-    
-    def est_ko(self):
-        pass
+    def est_ko(self) -> bool:
+        if self.point_de_vie > 0:
+            return False
+        else:
+            return True 
 
     def afficher_attaques(self):
-        pass
+        if (self.attaques.count() > 0):
+            for attaque in self.attaques:
+                print(f"{attaque.nom}, Type {attaque.type}, PP restant {attaque.pp}, Catégorie {attaque.categorie_attaque}. \n")
+        else :
+            print(f"{self.nom} ne possède aucune attaque.")
 
     def afficher(self):
-        pass
+        print(f"Caractéristique de {self.nom} : \n Pokémon de type {self.type1} {self.type2} \n PV : {self.point_de_vie} \n Niveau {self.niveau} \n")
 
 class Attaque:
     def __init__(self) -> None:
