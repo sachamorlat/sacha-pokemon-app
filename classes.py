@@ -5,7 +5,7 @@ class Jeu:
         self.joueurs : list[Joueur] = []
 
     def jouer(self):
-        pass
+        input("Nouveau Jeu : \n Appuyer sur entrée pour commencer :")
 
 
 
@@ -24,23 +24,22 @@ class Joueur:
     def ajouter_pokemon(self):
         pass
     
-    def choisir_attaque(self):
-        pass
+    def choisir_attaque(self, pokemon):
+        return attaque_choisie
     
     def recuperer_pokemon(self):
         pass
 
     def afficher_pokemons(self):
-        if(self.pokemons.count() > 0):
+        if(self.pokemons.__len__() > 0):
             for pokemon  in self.pokemons :
-                print(f"{pokemon.name}, Type : {pokemon.type}, PV : {pokemon.point_de_vie}, Niveau {pokemon.niveau}")
+                print(f"{pokemon.nom}, Type : {pokemon.type}, PV : {pokemon.point_de_vie}, Niveau {pokemon.niveau}")
         else :
-            print(f"{self.name} ne possède pas de Pokémon.")
+            print(f"{self.nom} ne possède pas de Pokémon.")
 
     def afficher(self):
         # à voir pour rajouter un if self is not None
         print(f"Informations de {self.nom} : \n Manche gagnée : {self.manche_gagnee} \n Argent : {self.argent} \n")
-        pass
 
 class Pokemon:
     # initialiser la liste d'attaque vide 
@@ -59,7 +58,7 @@ class Pokemon:
         self.attaques : list[Attaque] = []
 
     def ajouter_attaque(self, attaque):
-        if (self.attaques.count() <= 4):
+        if (self.attaques.__len__() <= 4):
             self.attaques.append(attaque)
             print(f"L'attaque {attaque.nom} a bien été ajoutée aux attaques de {self.nom}")
         else :
