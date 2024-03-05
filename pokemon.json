@@ -1,0 +1,466 @@
+[
+  {
+    "nom": "Pikachu",
+    "type1": "Electrique",
+    "point_de_vie": 100,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Éclair",
+        "type": "Electrique",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 10
+      },
+      {
+        "nom": "Vive-Attaque",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      }
+    ]
+  },
+  {
+    "nom": "Bulbizarre",
+    "type1": "Plante",
+    "type2": "Poison",
+    "point_de_vie": 120,
+    "niveau": 12,
+    "attaques": [
+      {
+        "nom": "Fouet Lianes",
+        "type": "Plante",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 45,
+        "pp": 15
+      },
+      {
+        "nom": "Tranche-Herbe",
+        "type": "Plante",
+        "categorie_attaque": "physique",
+        "precision": 95,
+        "puissance": 55,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Salamèche",
+    "type1": "Feu",
+    "point_de_vie": 110,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Flammèche",
+        "type": "Feu",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      },
+      {
+        "nom": "Griffe",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 30
+      }
+    ]
+  },
+  {
+    "nom": "Carapuce",
+    "type1": "Eau",
+    "point_de_vie": 130,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Pistolet à O",
+        "type": "Eau",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 15
+      },
+      {
+        "nom": "Écume",
+        "type": "Eau",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      }
+    ]
+  },
+  {
+    "nom": "Roucoups",
+    "type1": "Normal",
+    "type2": "Vol",
+    "point_de_vie": 140,
+    "niveau": 12,
+    "attaques": [
+      {
+        "nom": "Picpic",
+        "type": "Vol",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      },
+      {
+        "nom": "Rafale Feu",
+        "type": "Feu",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 50,
+        "pp": 15
+      }
+    ]
+  },
+  {
+    "nom": "Chenipan",
+    "type1": "Insecte",
+    "point_de_vie": 100,
+    "niveau": 8,
+    "attaques": [
+      {
+        "nom": "Charge",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 25
+      },
+      {
+        "nom": "Dard-Venin",
+        "type": "Poison",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 15,
+        "pp": 35
+      }
+    ]
+  },
+  {
+    "nom": "Aspicot",
+    "type1": "Insecte",
+    "type2": "Poison",
+    "point_de_vie": 110,
+    "niveau": 8,
+    "attaques": [
+      {
+        "nom": "Dard-Nuée",
+        "type": "Insecte",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 35,
+        "pp": 20
+      },
+      {
+        "nom": "Toxic",
+        "type": "Poison",
+        "categorie_attaque": "speciale",
+        "precision": 90,
+        "puissance": 0,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Rattata",
+    "type1": "Normal",
+    "point_de_vie": 120,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Charge",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 25
+      },
+      {
+        "nom": "Mimi-Queue",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 0,
+        "pp": 30
+      }
+    ]
+  },
+  {
+    "nom": "Piafabec",
+    "type1": "Normal",
+    "type2": "Vol",
+    "point_de_vie": 100,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Picpic",
+        "type": "Vol",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      },
+      {
+        "nom": "Cru-Aile",
+        "type": "Vol",
+        "categorie_attaque": "physique",
+        "precision": 95,
+        "puissance": 60,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Nidoran♀",
+    "type1": "Poison",
+    "point_de_vie": 130,
+    "niveau": 12,
+    "attaques": [
+      {
+        "nom": "Dard-Venin",
+        "type": "Poison",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 15,
+        "pp": 35
+      },
+      {
+        "nom": "Morsure",
+        "type": "Ténèbres",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 60,
+        "pp": 20
+      }
+    ]
+  },
+  {
+    "nom": "Nidoran♂",
+    "type1": "Poison",
+    "point_de_vie": 120,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Dard-Venin",
+        "type": "Poison",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 15,
+        "pp": 35
+      },
+      {
+        "nom": "Griffe",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 30
+      }
+    ]
+  },
+  {
+    "nom": "Mélofée",
+    "type1": "Fée",
+    "point_de_vie": 100,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Écras'Face",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 90,
+        "puissance": 40,
+        "pp": 20
+      },
+      {
+        "nom": "Métronome",
+        "type": "Normal",
+        "categorie_attaque": "autre",
+        "precision": 100,
+        "puissance": 0,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Rondoudou",
+    "type1": "Normal",
+    "type2": "Fée",
+    "point_de_vie": 110,
+    "niveau": 12,
+    "attaques": [
+      {
+        "nom": "Écras'Face",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 90,
+        "puissance": 40,
+        "pp": 20
+      },
+      {
+        "nom": "Vibra-Soin",
+        "type": "Normal",
+        "categorie_attaque": "autre",
+        "precision": 100,
+        "puissance": 0,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Nosferapti",
+    "type1": "Poison",
+    "type2": "Vol",
+    "point_de_vie": 120,
+    "niveau": 12,
+    "attaques": [
+      {
+        "nom": "Cru-Aile",
+        "type": "Vol",
+        "categorie_attaque": "physique",
+        "precision": 95,
+        "puissance": 60,
+        "pp": 10
+      },
+      {
+        "nom": "Tranche-Nuit",
+        "type": "Ténèbres",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 70,
+        "pp": 15
+      }
+    ]
+  },
+  {
+    "nom": "Mystherbe",
+    "type1": "Plante",
+    "type2": "Poison",
+    "point_de_vie": 110,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Fouet Lianes",
+        "type": "Plante",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 45,
+        "pp": 15
+      },
+      {
+        "nom": "Méga-Sangsue",
+        "type": "Plante",
+        "categorie_attaque": "physique",
+        "precision": 90,
+        "puissance": 40,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Paras",
+    "type1": "Insecte",
+    "type2": "Plante",
+    "point_de_vie": 130,
+    "niveau": 12,
+    "attaques": [
+      {
+        "nom": "Morsure",
+        "type": "Ténèbres",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 60,
+        "pp": 20
+      },
+      {
+        "nom": "Fouet Lianes",
+        "type": "Plante",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 45,
+        "pp": 15
+      }
+    ]
+  },
+  {
+    "nom": "Taupiqueur",
+    "type1": "Sol",
+    "point_de_vie": 120,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Griffe",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 30
+      },
+      {
+        "nom": "Tunnel",
+        "type": "Sol",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 80,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Tadmorv",
+    "type1": "Poison",
+    "point_de_vie": 140,
+    "niveau": 12,
+    "attaques": [
+      {
+        "nom": "Bomb-Beurk",
+        "type": "Poison",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 90,
+        "pp": 10
+      },
+      {
+        "nom": "Buée Noire",
+        "type": "Poison",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 0,
+        "pp": 15
+      }
+    ]
+  },
+  {
+    "nom": "Kokiyas",
+    "type1": "Eau",
+    "point_de_vie": 130,
+    "niveau": 10,
+    "attaques": [
+      {
+        "nom": "Pistolet à O",
+        "type": "Eau",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 15
+      },
+      {
+        "nom": "Hydrocanon",
+        "type": "Eau",
+        "categorie_attaque": "speciale",
+        "precision": 90,
+        "puissance": 110,
+        "pp": 5
+      }
+    ]
+  }
+]

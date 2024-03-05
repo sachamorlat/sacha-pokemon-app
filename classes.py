@@ -15,7 +15,7 @@ class Joueur:
         self.nom : str = ""
         self.manche_gagnee : int = 0
         self.argent : int = 0
-        self.pokemons : list = [Pokemon]
+        self.pokemons : list[Pokemon]
 
     
     def choisir_pokemon(self):
