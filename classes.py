@@ -112,8 +112,17 @@ class Pokemon:
             print(f"{self.nom} ne possède pas l'attaque {attaque.nom}")
 
     def attaquer(self, pokemon_cible, attaque):
-        # à compléter
-        pass
+        degats = attaque.calculer_degats(self, pokemon_cible)
+        if degats > 0:
+            pokemon_cible.point_de_vie -= degats
+            print(f"{self.nom} utilise {attaque.nom} !")
+            print(f"{attaque.nom} inflige {degats} dégâts à {pokemon_cible.nom} !")
+            if pokemon_cible.est_ko():
+                print(f"{pokemon_cible.nom} est K.O. !")
+            else:
+                print(f"{pokemon_cible.nom} a maintenant {pokemon_cible.point_de_vie} points de vie.")
+        else:
+            print(f"L'attaque {attaque.nom} a échoué !")
 
     def est_ko(self) -> bool:
         if self.point_de_vie > 0:
