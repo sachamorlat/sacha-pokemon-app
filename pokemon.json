@@ -6,7 +6,7 @@
     "niveau": 10,
     "attaques": [
       {
-        "nom": "Éclair",
+        "nom": "Eclair",
         "type": "Electrique",
         "categorie_attaque": "physique",
         "precision": 100,
@@ -49,13 +49,13 @@
     ]
   },
   {
-    "nom": "Salamèche",
+    "nom": "Salameche",
     "type1": "Feu",
     "point_de_vie": 110,
     "niveau": 10,
     "attaques": [
       {
-        "nom": "Flammèche",
+        "nom": "Flammeche",
         "type": "Feu",
         "categorie_attaque": "physique",
         "precision": 100,
@@ -87,7 +87,7 @@
         "pp": 15
       },
       {
-        "nom": "Écume",
+        "nom": "Ecume",
         "type": "Eau",
         "categorie_attaque": "speciale",
         "precision": 100,
@@ -153,7 +153,7 @@
     "niveau": 8,
     "attaques": [
       {
-        "nom": "Dard-Nuée",
+        "nom": "Dard-Nuee",
         "type": "Insecte",
         "categorie_attaque": "physique",
         "precision": 100,
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "nom": "Nidoran♀",
+    "nom": "Nidoran(f)",
     "type1": "Poison",
     "point_de_vie": 130,
     "niveau": 12,
@@ -244,7 +244,7 @@
     ]
   },
   {
-    "nom": "Nidoran♂",
+    "nom": "Nidoran(m)",
     "type1": "Poison",
     "point_de_vie": 120,
     "niveau": 10,
@@ -268,13 +268,13 @@
     ]
   },
   {
-    "nom": "Mélofée",
-    "type1": "Fée",
+    "nom": "Melofee",
+    "type1": "Fee",
     "point_de_vie": 100,
     "niveau": 10,
     "attaques": [
       {
-        "nom": "Écras'Face",
+        "nom": "Ecras'Face",
         "type": "Normal",
         "categorie_attaque": "physique",
         "precision": 90,
@@ -282,7 +282,7 @@
         "pp": 20
       },
       {
-        "nom": "Métronome",
+        "nom": "Metronome",
         "type": "Normal",
         "categorie_attaque": "autre",
         "precision": 100,
@@ -294,12 +294,12 @@
   {
     "nom": "Rondoudou",
     "type1": "Normal",
-    "type2": "Fée",
+    "type2": "Fee",
     "point_de_vie": 110,
     "niveau": 12,
     "attaques": [
       {
-        "nom": "Écras'Face",
+        "nom": "Ecras'Face",
         "type": "Normal",
         "categorie_attaque": "physique",
         "precision": 90,
@@ -333,7 +333,7 @@
       },
       {
         "nom": "Tranche-Nuit",
-        "type": "Ténèbres",
+        "type": "Tenebres",
         "categorie_attaque": "physique",
         "precision": 100,
         "puissance": 70,
@@ -357,7 +357,7 @@
         "pp": 15
       },
       {
-        "nom": "Méga-Sangsue",
+        "nom": "Mega-Sangsue",
         "type": "Plante",
         "categorie_attaque": "physique",
         "precision": 90,
@@ -375,7 +375,7 @@
     "attaques": [
       {
         "nom": "Morsure",
-        "type": "Ténèbres",
+        "type": "Tenebres",
         "categorie_attaque": "physique",
         "precision": 100,
         "puissance": 60,
@@ -430,7 +430,7 @@
         "pp": 10
       },
       {
-        "nom": "Buée Noire",
+        "nom": "Buee Noire",
         "type": "Poison",
         "categorie_attaque": "speciale",
         "precision": 100,
