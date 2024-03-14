@@ -1,9 +1,25 @@
 # Fichier de classes
-
+import json
 
 class Jeu:
     def __init__(self) -> None:
         self.joueurs: list[Joueur] = []
+
+    def charger_pokemons_depuis_json(self, nom_fichier: str):
+        pokemons = []
+        with open(nom_fichier, "r") as fichier:
+            donnees = json.load(fichier)
+            for pokemon_data in donnees:
+                pokemon = Pokemon()
+                pokemon.nom = pokemon_data["nom"]
+                pokemon.type1 = pokemon_data["type1"]
+                pokemon.point_de_vie = pokemon_data["point_de_vie"]
+                pokemon.niveau = pokemon_data["niveau"]
+                pokemon.attaques = [Attaque(**attaque_data) for attaque_data in pokemon_data["attaques"]]
+                pokemons.append(pokemon)
+        return pokemons
+    
+    
 
     def jouer(self):
         input("Nouveau Jeu : \n Appuyer sur entrée pour commencer :")
