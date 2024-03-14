@@ -94,9 +94,9 @@ class Jeu:
                     # Vérification si le Pokémon opposé est KO après l'attaque
                     if pokemon_joueur_oppose.est_ko():
                         console.print(f"{pokemon_joueur_oppose.nom} de {joueur_oppose.nom} est K.O. !")
-                        # console.print(f"[bold]{joueur_oppose.nom}[/bold], voici les Pokémon disponibles pour le combat :")
-                        # joueur_oppose.afficher_pokemons()                          
-                        # joueur_oppose.recuperer_pokemon(int(input(f"{joueur_oppose.nom} veuillez choisir un Pokemon ")))
+                        console.print(f"[bold]{joueur_oppose.nom}[/bold], voici les Pokémon disponibles pour le combat :")
+                        joueur_oppose.afficher_pokemons()                          
+                        joueur_oppose.recuperer_pokemon(int(input(f"{joueur_oppose.nom} veuillez choisir un Pokemon ")))
                         break
 
                     # Attaque du Pokémon opposé sur le Pokémon actuel
@@ -105,9 +105,9 @@ class Jeu:
                     # Vérification si le Pokémon actuel est KO après l'attaque
                     if pokemon_joueur_actuel.est_ko():
                         console.print(f"{pokemon_joueur_actuel.nom} de {joueur_actuel.nom} est K.O. !")
-                        # console.print(f"[bold]{joueur_actuel.nom}[/bold], voici les Pokémon disponibles pour le combat :")
-                        # joueur_actuel.afficher_pokemons()                         
-                        # joueur_actuel.recuperer_pokemon(int(input(f"{joueur_actuel.nom} veuillez choisir un Pokemon ")))
+                        console.print(f"[bold]{joueur_actuel.nom}[/bold], voici les Pokémon disponibles pour le combat :")
+                        joueur_actuel.afficher_pokemons()                         
+                        joueur_actuel.recuperer_pokemon(int(input(f"{joueur_actuel.nom} veuillez choisir un Pokemon ")))
                         break
                         
 
@@ -138,7 +138,8 @@ class Joueur:
         self.manche_gagnee: int = 0
         self.argent: int = 0
         self.pokemons: list[Pokemon] = []
-
+        self.pokemons_disponibles = []
+    
     def ajouter_pokemon(self, pokemon):
         if len(self.pokemons) < 3:
             self.pokemons.append(pokemon)
@@ -162,31 +163,30 @@ class Joueur:
             return None
 
     def recuperer_pokemon(self, numero_pokemon: int):
-        if numero_pokemon < 1 or numero_pokemon > len(self.pokemons):
+        self.pokemons_disponibles = [pokemon for pokemon in self.pokemons if not pokemon.est_ko()]
+        if numero_pokemon < 1 or numero_pokemon > len(self.pokemons_disponibles):
             console.print("[red]Numéro de Pokémon invalide.[/red]")
             return self.recuperer_pokemon()
         else:
-            pokemon_recupere = self.pokemons[numero_pokemon - 1]
+            pokemon_recupere = self.pokemons_disponibles[numero_pokemon - 1]
             console.print(f"{pokemon_recupere.nom} est envoyé au combat !\n")
             return pokemon_recupere
 
     def afficher_pokemons(self):
+        self.pokemons_disponibles = [pokemon for pokemon in self.pokemons if not pokemon.est_ko()]
         if len(self.pokemons) > 0:
             table = Table(show_header=True, header_style="bold magenta")
             table.add_column("Nom")
             table.add_column("Type")
             table.add_column("PV")
             table.add_column("Niveau")
-            for pokemon in self.pokemons:
-                if pokemon.est_ko():
-                    self.pokemons.remove(pokemon)
-                else:
-                    nom_colore = self.get_color_by_type(pokemon.type1, pokemon.nom)
-                    type1_colore = self.get_color_by_type(pokemon.type1, pokemon.type1)
-                    type2_colore = self.get_color_by_type(pokemon.type2, pokemon.type2) if pokemon.type2 else ""
-                    table.add_row(
-                        nom_colore, f"{type1_colore} {type2_colore}", f"[green]{pokemon.point_de_vie}[/green]", str(pokemon.niveau)
-                    )
+            for pokemon in self.pokemons_disponibles:
+                nom_colore = self.get_color_by_type(pokemon.type1, pokemon.nom)
+                type1_colore = self.get_color_by_type(pokemon.type1, pokemon.type1)
+                type2_colore = self.get_color_by_type(pokemon.type2, pokemon.type2) if pokemon.type2 else ""
+                table.add_row(
+                    nom_colore, f"{type1_colore} {type2_colore}", f"[green]{pokemon.point_de_vie}[/green]", str(pokemon.niveau)
+                )
             console.print(table)
         else:
             console.print(f"[italic]{self.nom} ne possède pas de Pokémon.[/italic]")
@@ -304,26 +304,13 @@ class Attaque:
         degats: int = 0
 
         if pokemon_attaquant is not None and pokemon_cible is not None:
-            degats = int(
-                ((pokemon_attaquant.niveau * 0.4 + 2) * self.puissance)
-            )  # Formule de calcul de dégats
+            degats = ((pokemon_attaquant.niveau * 0.4 + 2) * self.puissance)
+              # Formule de calcul de dégats
 
             if self.categorie_attaque == "physique":
-                degats = int(
-                    (
-                        ((degats) * pokemon_attaquant.attaque)
-                        / (pokemon_cible.defense * 50)
-                    )
-                    + 2
-                )
+                degats = (((degats) * pokemon_attaquant.attaque) / (pokemon_cible.defense * 50)) + 2
             elif self.categorie_attaque == "speciale":
-                degats = int(
-                    (
-                        ((degats) * pokemon_attaquant.attaque_speciale)
-                        / (pokemon_cible.defense_speciale * 50)
-                    )
-                    + 2
-                )
+                degats =(((degats) * pokemon_attaquant.attaque_speciale) / (pokemon_cible.defense_speciale * 50)) + 2
             else:
                 console.print("[red]L'attaque de caractéristique doit être physique ou spéciale.[/red]")
         else:
@@ -331,8 +318,8 @@ class Attaque:
 
         # Pour gérer le STAB
         if pokemon_attaquant.type1 == self.type or pokemon_attaquant.type2 == self.type:
-            degats = int(degats) * 1.5
+            degats *= 1.5
 
         # TODO Faire en sorte de gérer la table des types
 
-        return degats
+        return round(degats)
