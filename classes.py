@@ -22,13 +22,102 @@ class Jeu:
     
 
     def jouer(self):
-        input("Nouveau Jeu : \n Appuyer sur entrée pour commencer :")
+        pokemons_disponibles = self.charger_pokemons_depuis_json("pokemon.json")
+
+        for i in range(2):
+            nom_joueur = input(f"Joueur {i+1} veuillez saisir votre nom : ")
+            joueur = Joueur(nom_joueur)
+            self.joueurs.append(joueur)  
+
+        joueur_actuel_index = 0  # Pour suivre l'index du joueur actuel
+
+        for _ in range(6):  # Chaque joueur choisit 3 Pokémon
+            joueur_actuel = self.joueurs[joueur_actuel_index]
+            print(f"C'est au tour de {joueur_actuel.nom} de choisir un Pokémon.")
+            print("Voici la liste des Pokémon disponibles :")
+            for i, pokemon in enumerate(pokemons_disponibles, start=1):
+                print(f"{i}. {pokemon.nom}")
+            choix_pokemon = input(f"{joueur_actuel.nom} choisissez un Pokémon : ")
+            choix_pokemon = int(choix_pokemon)
+            if choix_pokemon < 1 or choix_pokemon > len(pokemons_disponibles):
+                print("Choix invalide. Veuillez choisir à nouveau.")
+                continue
+            pokemon_choisi = pokemons_disponibles.pop(choix_pokemon - 1)  # Retirer le Pokémon choisi de la liste
+            joueur_actuel.ajouter_pokemon(pokemon_choisi)
+
+            # Passer au joueur suivant
+            joueur_actuel_index = (joueur_actuel_index + 1) % 2 
+         
+        for joueur in self.joueurs: 
+            print(f"\nEquipe de {joueur.nom} : ")
+            joueur.afficher_pokemons()
+
+        print("\nQue le combat commence !")
+
+        vainqueur = self.combattre()
+
+        print(f"Le vainqueur est {vainqueur.nom} !")
+
+        rejouer = input("Voulez-vous rejouer ? (oui/non) ")
+        if rejouer.lower() == "oui":
+            self.jouer()
+        else:
+            print("Merci d'avoir joué !")
+  
+
+    def combattre(self):
+        # Déroulement des rounds
+        for round in range(3):
+            print(f"\nRound {round+1} commence !")
+            # Combat entre les Pokémons des joueurs
+            for i in range(len(self.joueurs)):
+                joueur_actuel = self.joueurs[i]
+                joueur_oppose = self.joueurs[(i + 1) % 2]  # Pour alterner entre les joueurs
+                pokemon_joueur_actuel = joueur_actuel.pokemons[0]  # Premier Pokémon du joueur actuel
+                pokemon_joueur_oppose = joueur_oppose.pokemons[0]  # Premier Pokémon du joueur opposé
+
+                # Logique pour le combat entre les deux Pokémon
+                while not (pokemon_joueur_actuel.est_ko() or pokemon_joueur_oppose.est_ko()):
+                    # Attaque du Pokémon actuel sur le Pokémon opposé
+                    attaque_joueur_actuel = joueur_actuel.choisir_attaque(pokemon_joueur_actuel)
+                    pokemon_joueur_actuel.attaquer(pokemon_joueur_oppose, attaque_joueur_actuel)
+                    # Vérification si le Pokémon opposé est KO après l'attaque
+                    if pokemon_joueur_oppose.est_ko():
+                        print(f"{pokemon_joueur_oppose.nom} de {joueur_oppose.nom} est K.O. !")
+                        break
+
+                    # Attaque du Pokémon opposé sur le Pokémon actuel
+                    attaque_joueur_oppose = joueur_oppose.choisir_attaque(pokemon_joueur_oppose)
+                    pokemon_joueur_oppose.attaquer(pokemon_joueur_actuel, attaque_joueur_oppose)
+                    # Vérification si le Pokémon actuel est KO après l'attaque
+                    if pokemon_joueur_actuel.est_ko():
+                        print(f"{pokemon_joueur_actuel.nom} de {joueur_actuel.nom} est K.O. !")
+                        break
+
+            # Vérification si un joueur n'a plus de Pokémon en état de combattre après le round
+            if joueur_actuel.pokemons[0].est_ko():
+                print(f"{joueur_actuel.nom} n'a plus de Pokémon en état de combattre !")
+                return joueur_oppose
+            elif joueur_oppose.pokemons[0].est_ko():
+                print(f"{joueur_oppose.nom} n'a plus de Pokémon en état de combattre !")
+                return joueur_actuel
+
+        # Si aucun joueur n'a remporté deux manches, déterminez le vainqueur en fonction des points de vie restants
+        score_joueur1 = sum([pokemon.point_de_vie for pokemon in self.joueurs[0].pokemons])
+        score_joueur2 = sum([pokemon.point_de_vie for pokemon in self.joueurs[1].pokemons])
+
+        if score_joueur1 > score_joueur2:
+            return self.joueurs[0]
+        elif score_joueur2 > score_joueur1:
+            return self.joueurs[1]
+        else:
+            return None  # Match nul
 
 
 class Joueur:
     # initialisation liste de pokemon vide
-    def __init__(self) -> None:
-        self.nom: str = ""
+    def __init__(self, nom: str) -> None:
+        self.nom: str = nom
         self.manche_gagnee: int = 0
         self.argent: int = 0
         self.pokemons: list[Pokemon] = []
@@ -49,13 +138,15 @@ class Joueur:
             print("Veuillez saisir un numéro valide.")
 
     def ajouter_pokemon(self, pokemon):
-        self.pokemons.append(pokemon)
-        print(f"{pokemon.nom} a bien été ajouté à votre équipe ! \n")
+        if len(self.pokemons) < 3:
+            self.pokemons.append(pokemon)
+            print(f"{pokemon.nom} a bien été ajouté à l'équipe de {self.nom} !")
+        else:
+            print("Vous avez déjà trois Pokémon dans votre équipe !")
 
     def choisir_attaque(self, pokemon):
         print(f"Choisissez une attaque pour {pokemon.nom} :")
-        for i, attaque in enumerate(pokemon.attaques, start=1):
-            print(f"{i}. {attaque.nom}")
+        pokemon.afficher_attaques()
         choix = input("Veuillez choisir une attaque en indiquant son numéro : ")
         # Gérer les cas où l'utilisateur ne saisit pas un numéro valide ou une autre entrée non valide
         try:
@@ -68,7 +159,7 @@ class Joueur:
             print("Veuillez saisir un numéro valide.")
             return None
 
-    def recuperer_pokemon(self, numero_pokemon):
+    def recuperer_pokemon(self, numero_pokemon: int):
         if numero_pokemon < 1 or numero_pokemon > len(self.pokemons):
             print("Numéro de Pokémon invalide.")
             return None
@@ -78,7 +169,7 @@ class Joueur:
             return pokemon_recupere
 
     def afficher_pokemons(self):
-        if self.pokemons.__len__() > 0:
+        if len(self.pokemons) > 0:
             for pokemon in self.pokemons:
                 print(
                     f"{pokemon.nom}, Type : {pokemon.type1} {pokemon.type2}, PV : {pokemon.point_de_vie}, Niveau {pokemon.niveau}"
@@ -110,7 +201,7 @@ class Pokemon:
         self.attaques: list[Attaque] = []
 
     def ajouter_attaque(self, attaque):
-        if self.attaques.__len__() <= 4:
+        if len(self.attaques) <= 4:
             self.attaques.append(attaque)
             print(
                 f"L'attaque {attaque.nom} a bien été ajoutée aux attaques de {self.nom}"
@@ -147,10 +238,10 @@ class Pokemon:
             return True
 
     def afficher_attaques(self):
-        if self.attaques.count() > 0:
-            for attaque in self.attaques:
+        if len(self.attaques) > 0:
+            for index, attaque in enumerate(self.attaques, start=1):
                 print(
-                    f"{attaque.nom}, Type {attaque.type}, PP restant {attaque.pp}, Catégorie {attaque.categorie_attaque}. \n"
+                    f"{index}. {attaque.nom}, Type {attaque.type}, PP restant {attaque.pp}, Catégorie {attaque.categorie_attaque}."
                 )
         else:
             print(f"{self.nom} ne possède aucune attaque.")
@@ -171,7 +262,7 @@ class Attaque:
         self.puissance: int = puissance
         self.pp: int = pp
 
-    def calculer_degats(self, pokemon_attaquant, pokemon_cible) -> int:
+    def calculer_degats(self, pokemon_attaquant: Pokemon, pokemon_cible: Pokemon ) -> int:
         degats: int = 0
 
         if pokemon_attaquant is not None and pokemon_cible is not None:
