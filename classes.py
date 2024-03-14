@@ -198,10 +198,10 @@ class Joueur:
             "Plante": "green",
             "Electrique": "yellow",
             "Psy": "magenta",
-            "Fee": "pink",
+            "Fee": "pink1",
             "Sol": "brown",                    
-            "Insecte": "lightgreen",
-            "Normal": "grey",
+            "Insecte": "dark_olive_green1",
+            "Normal": "grey74",
             "Combat": "orange",
             "Poison": "purple"
             }
@@ -265,19 +265,39 @@ class Pokemon:
             return False
         else:
             return True
+    
+    def get_color_for_attacks(self, type_name: str) -> str:
+        color_map = {
+            "Feu": "red",
+            "Eau": "blue",
+            "Plante": "green",
+            "Electrique": "yellow",
+            "Psy": "magenta",
+            "Fee": "pink1",
+            "Sol": "brown",                    
+            "Insecte": "dark_olive_green1",
+            "Normal": "grey74",
+            "Combat": "orange",
+            "Poison": "purple"
+        }
+        return color_map.get(type_name, 'white')
 
     def afficher_attaques(self):
         if len(self.attaques) > 0:
             table = Table(show_header=True, header_style="bold magenta")
-            table.add_column("Attaque")
-            table.add_column("Type")
-            table.add_column("PP")
-            table.add_column("Catégorie")
+            table.add_column("Attaque", style="cyan")
+            table.add_column("Type", style="magenta")
+            table.add_column("PP", style="yellow")
+            table.add_column("Catégorie", style="green")
             for attaque in self.attaques:
-                table.add_row(attaque.nom, attaque.type, str(attaque.pp), attaque.categorie_attaque)
+                nom_colore = f"[{self.get_color_for_attacks(attaque.type)}]{attaque.nom}[/]"
+                type_colore = f"[{self.get_color_for_attacks(attaque.type)}]{attaque.type}[/]"
+                table.add_row(nom_colore, type_colore, str(attaque.pp), attaque.categorie_attaque)
             console.print(table)
         else:
             console.print(f"[italic]{self.nom} ne possède aucune attaque.[/italic]")
+
+
 
     def afficher(self):
         console.print(
