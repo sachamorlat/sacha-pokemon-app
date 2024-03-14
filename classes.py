@@ -191,13 +191,13 @@ class Pokemon:
         self.prix: int = 0
         self.type1: str = ""
         self.type2: str = ""
-        self.point_de_vie: int
+        self.point_de_vie: int = 0
         self.niveau: int = 1
-        self.attaque: int
-        self.attaque_speciale: int
-        self.defense: int
-        self.defense_speciale: int
-        self.vitesse: int
+        self.attaque: int = 0
+        self.attaque_speciale: int = 0
+        self.defense: int = 0
+        self.defense_speciale: int = 0
+        self.vitesse: int = 0
         self.attaques: list[Attaque] = []
 
     def ajouter_attaque(self, attaque):
