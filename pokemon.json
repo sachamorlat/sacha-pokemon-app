@@ -2,7 +2,7 @@
   {
     "nom": "Pikachu",
     "type1": "Electrique",
-    "point_de_vie": 100,
+    "point_de_vie": 35,
     "niveau": 10,
     "attaque": 55,
     "defense": 40,
@@ -32,7 +32,7 @@
     "nom": "Bulbizarre",
     "type1": "Plante",
     "type2": "Poison",
-    "point_de_vie": 120,
+    "point_de_vie": 45,
     "niveau": 12,
     "attaque": 49,
     "defense": 49,
@@ -61,7 +61,7 @@
   {
     "nom": "Salameche",
     "type1": "Feu",
-    "point_de_vie": 110,
+    "point_de_vie": 39,
     "niveau": 10,
     "attaque": 52,
     "defense": 43,
@@ -90,7 +90,7 @@
   {
     "nom": "Carapuce",
     "type1": "Eau",
-    "point_de_vie": 130,
+    "point_de_vie": 44,
     "niveau": 10,
     "attaque": 48,
     "defense": 65,
@@ -120,7 +120,7 @@
     "nom": "Roucoups",
     "type1": "Normal",
     "type2": "Vol",
-    "point_de_vie": 140,
+    "point_de_vie": 63,
     "niveau": 12,
     "attaque": 65,
     "defense": 60,
@@ -142,7 +142,7 @@
         "categorie_attaque": "speciale",
         "precision": 100,
         "puissance": 50,
-        "pp": 15
+        "pp": 10
       }
     ]
   },
@@ -179,129 +179,12 @@
     "nom": "Aspicot",
     "type1": "Insecte",
     "type2": "Poison",
-    "point_de_vie": 110,
-    "niveau": 8,
-    "attaque": 40,
+    "point_de_vie": 40,
+    "niveau": 5,
+    "attaque": 30,
     "defense": 35,
-    "attaque_speciale": 30,
-    "defense_speciale": 30,
-    "vitesse": 20,
-    "attaques": [
-      {
-        "nom": "Dard-Nuee",
-        "type": "Insecte",
-        "categorie_attaque": "physique",
-        "precision": 100,
-        "puissance": 35,
-        "pp": 20
-      },
-      {
-        "nom": "Toxic",
-        "type": "Poison",
-        "categorie_attaque": "speciale",
-        "precision": 90,
-        "puissance": 0,
-        "pp": 10
-      }
-    ]
-  },
-  {
-    "nom": "Rattata",
-    "type1": "Normal",
-    "point_de_vie": 120,
-    "niveau": 10,
-    "attaque": 56,
-    "defense": 35,
-    "attaque_speciale": 25,
-    "defense_speciale": 35,
-    "vitesse": 72,
-    "attaques": [
-      {
-        "nom": "Charge",
-        "type": "Normal",
-        "categorie_attaque": "physique",
-        "precision": 100,
-        "puissance": 40,
-        "pp": 25
-      },
-      {
-        "nom": "Mimi-Queue",
-        "type": "Normal",
-        "categorie_attaque": "physique",
-        "precision": 100,
-        "puissance": 0,
-        "pp": 30
-      }
-    ]
-  },
-  {
-    "nom": "Piafabec",
-    "type1": "Normal",
-    "type2": "Vol",
-    "point_de_vie": 100,
-    "niveau": 10,
-    "attaque": 60,
-    "defense": 30,
-    "attaque_speciale": 31,
-    "defense_speciale": 31,
-    "vitesse": 70,
-    "attaques": [
-      {
-        "nom": "Picpic",
-        "type": "Vol",
-        "categorie_attaque": "physique",
-        "precision": 100,
-        "puissance": 40,
-        "pp": 20
-      },
-      {
-        "nom": "Cru-Aile",
-        "type": "Vol",
-        "categorie_attaque": "physique",
-        "precision": 95,
-        "puissance": 60,
-        "pp": 10
-      }
-    ]
-  },
-  {
-    "nom": "Nidoran(f)",
-    "type1": "Poison",
-    "point_de_vie": 130,
-    "niveau": 12,
-    "attaque": 47,
-    "defense": 52,
-    "attaque_speciale": 40,
-    "defense_speciale": 40,
-    "vitesse": 41,
-    "attaques": [
-      {
-        "nom": "Dard-Venin",
-        "type": "Poison",
-        "categorie_attaque": "physique",
-        "precision": 100,
-        "puissance": 15,
-        "pp": 35
-      },
-      {
-        "nom": "Morsure",
-        "type": "Tenebres",
-        "categorie_attaque": "physique",
-        "precision": 100,
-        "puissance": 60,
-        "pp": 20
-      }
-    ]
-  },
-  {
-    "nom": "Nidoran(m)",
-    "type1": "Poison",
-    "point_de_vie": 120,
-    "niveau": 10,
-    "attaque": 57,
-    "defense": 40,
-    "attaque_speciale": 40,
-    "defense_speciale": 40,
+    "attaque_speciale": 20,
+    "defense_speciale": 20,
     "vitesse": 50,
     "attaques": [
       {
@@ -313,19 +196,19 @@
         "pp": 35
       },
       {
-        "nom": "Griffe",
+        "nom": "Charge",
         "type": "Normal",
         "categorie_attaque": "physique",
         "precision": 100,
         "puissance": 40,
-        "pp": 30
+        "pp": 35
       }
     ]
   },
   {
     "nom": "Melofee",
     "type1": "Fee",
-    "point_de_vie": 100,
+    "point_de_vie": 70,
     "niveau": 10,
     "attaque": 70,
     "defense": 70,
@@ -355,7 +238,7 @@
     "nom": "Rondoudou",
     "type1": "Normal",
     "type2": "Fee",
-    "point_de_vie": 110,
+    "point_de_vie": 115,
     "niveau": 12,
     "attaque": 45,
     "defense": 20,
@@ -385,8 +268,8 @@
     "nom": "Nosferapti",
     "type1": "Poison",
     "type2": "Vol",
-    "point_de_vie": 120,
-    "niveau": 12,
+    "point_de_vie": 40,
+    "niveau": 7,
     "attaque": 45,
     "defense": 35,
     "attaque_speciale": 30,
@@ -394,50 +277,138 @@
     "vitesse": 55,
     "attaques": [
       {
-        "nom": "Cru-Aile",
-        "type": "Vol",
-        "categorie_attaque": "physique",
-        "precision": 95,
-        "puissance": 60,
-        "pp": 10
+        "nom": "Ultrason",
+        "type": "Normal",
+        "categorie_attaque": "speciale",
+        "precision": 55,
+        "puissance": 0,
+        "pp": 20
       },
       {
-        "nom": "Tranche-Nuit",
-        "type": "Tenebres",
-        "categorie_attaque": "physique",
+        "nom": "Groz'Yeux",
+        "type": "Normal",
+        "categorie_attaque": "statut",
         "precision": 100,
-        "puissance": 70,
-        "pp": 15
+        "puissance": 0,
+        "pp": 30
       }
     ]
   },
   {
-    "nom": "Mystherbe",
-    "type1": "Plante",
-    "type2": "Poison",
-    "point_de_vie": 110,
+    "nom": "Rattata",
+    "type1": "Normal",
+    "point_de_vie": 30,
     "niveau": 10,
-    "attaque": 50,
-    "defense": 45,
-    "attaque_speciale": 55,
-    "defense_speciale": 65,
-    "vitesse": 30,
+    "attaque": 56,
+    "defense": 35,
+    "attaque_speciale": 25,
+    "defense_speciale": 35,
+    "vitesse": 72,
     "attaques": [
       {
-        "nom": "Fouet Lianes",
-        "type": "Plante",
+        "nom": "Charge",
+        "type": "Normal",
         "categorie_attaque": "physique",
         "precision": 100,
-        "puissance": 45,
-        "pp": 15
+        "puissance": 40,
+        "pp": 25
       },
       {
-        "nom": "Mega-Sangsue",
-        "type": "Plante",
+        "nom": "Mimi-Queue",
+        "type": "Normal",
         "categorie_attaque": "physique",
-        "precision": 90,
+        "precision": 100,
+        "puissance": 0,
+        "pp": 30
+      }
+    ]
+  },
+  {
+    "nom": "Rattatac",
+    "type1": "Normal",
+    "point_de_vie": 55,
+    "niveau": 9,
+    "attaque": 56,
+    "defense": 35,
+    "attaque_speciale": 25,
+    "defense_speciale": 35,
+    "vitesse": 72,
+    "attaques": [
+      {
+        "nom": "Charge",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
         "puissance": 40,
-        "pp": 10
+        "pp": 35
+      },
+      {
+        "nom": "Mimi-Queue",
+        "type": "Normal",
+        "categorie_attaque": "statut",
+        "precision": 100,
+        "puissance": 0,
+        "pp": 30
+      }
+    ]
+  },
+  {
+    "nom": "Piafabec",
+    "type1": "Normal",
+    "type2": "Vol",
+    "point_de_vie": 40,
+    "niveau": 8,
+    "attaque": 60,
+    "defense": 30,
+    "attaque_speciale": 31,
+    "defense_speciale": 31,
+    "vitesse": 70,
+    "attaques": [
+      {
+        "nom": "Picpic",
+        "type": "Vol",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      },
+      {
+        "nom": "Frappe Atlas",
+        "type": "Combat",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      }
+    ]
+  },
+  {
+    "nom": "Rapasdepic",
+    "type1": "Normal",
+    "type2": "Vol",
+    "point_de_vie": 65,
+    "niveau": 10,
+    "attaque": 80,
+    "defense": 50,
+    "attaque_speciale": 50,
+    "defense_speciale": 50,
+    "vitesse": 100,
+    "attaques": [
+      {
+        "nom": "Picpic",
+        "type": "Vol",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 20
+      },
+      {
+        "nom": "Cru-Aile",
+        "type": "Vol",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 60,
+        "pp": 15
       }
     ]
   },
@@ -555,6 +526,151 @@
         "precision": 90,
         "puissance": 110,
         "pp": 5
+      }
+    ]
+  },
+  {
+    "nom": "Abo",
+    "type1": "Poison",
+    "point_de_vie": 35,
+    "niveau": 6,
+    "attaque": 60,
+    "defense": 44,
+    "attaque_speciale": 40,
+    "defense_speciale": 54,
+    "vitesse": 55,
+    "attaques": [
+      {
+        "nom": "Dard-Venin",
+        "type": "Poison",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 15,
+        "pp": 35
+      },
+      {
+        "nom": "Morsure",
+        "type": "Tenebres",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 60,
+        "pp": 25
+      }
+    ]
+  },
+  {
+    "nom": "Machoc",
+    "type1": "Combat",
+    "point_de_vie": 70,
+    "niveau": 12,
+    "attaque": 80,
+    "defense": 50,
+    "attaque_speciale": 35,
+    "defense_speciale": 45,
+    "vitesse": 35,
+    "attaques": [
+      {
+        "nom": "Balayage",
+        "type": "Combat",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 50,
+        "pp": 25
+      },
+      {
+        "nom": "Poing-Karate",
+        "type": "Combat",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 50,
+        "pp": 25
+      }
+    ]
+  },
+  {
+    "nom": "Tadmorv",
+    "type1": "Poison",
+    "point_de_vie": 80,
+    "niveau": 8,
+    "attaque": 60,
+    "defense": 44,
+    "attaque_speciale": 40,
+    "defense_speciale": 54,
+    "vitesse": 55,
+    "attaques": [
+      {
+        "nom": "Acide",
+        "type": "Poison",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 30
+      },
+      {
+        "nom": "Bomb-Beurk",
+        "type": "Poison",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 90,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Leveinard",
+    "type1": "Normal",
+    "point_de_vie": 250,
+    "niveau": 11,
+    "attaque": 5,
+    "defense": 5,
+    "attaque_speciale": 35,
+    "defense_speciale": 105,
+    "vitesse": 50,
+    "attaques": [
+      {
+        "nom": "Vive-Attaque",
+        "type": "Normal",
+        "categorie_attaque": "physique",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 30
+      },
+      {
+        "nom": "Vampigraine",
+        "type": "Plante",
+        "categorie_attaque": "physique",
+        "precision": 90,
+        "puissance": 1,
+        "pp": 10
+      }
+    ]
+  },
+  {
+    "nom": "Mew",
+    "type1": "Psy",
+    "point_de_vie": 100,
+    "niveau": 15,
+    "attaque": 100,
+    "defense": 100,
+    "attaque_speciale": 100,
+    "defense_speciale": 100,
+    "vitesse": 100,
+    "attaques": [
+      {
+        "nom": "Psyko",
+        "type": "Psy",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 90,
+        "pp": 10
+      },
+      {
+        "nom": "Mega-Sangsue",
+        "type": "Plante",
+        "categorie_attaque": "speciale",
+        "precision": 100,
+        "puissance": 40,
+        "pp": 15
       }
     ]
   }
