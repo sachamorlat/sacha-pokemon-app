@@ -188,16 +188,16 @@ class Pokemon:
     # initialiser la liste d'attaque vide
     def __init__(self) -> None:
         self.nom: str = ""
-        self.prix: int = 0
+        self.prix: int = 1
         self.type1: str = ""
         self.type2: str = ""
-        self.point_de_vie: int = 0
+        self.point_de_vie: int = 1
         self.niveau: int = 1
-        self.attaque: int = 0
-        self.attaque_speciale: int = 0
-        self.defense: int = 0
-        self.defense_speciale: int = 0
-        self.vitesse: int = 0
+        self.attaque: int = 1
+        self.attaque_speciale: int = 1
+        self.defense: int = 1
+        self.defense_speciale: int = 1
+        self.vitesse: int = 1
         self.attaques: list[Attaque] = []
 
     def ajouter_attaque(self, attaque):
