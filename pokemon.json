@@ -4,6 +4,11 @@
     "type1": "Electrique",
     "point_de_vie": 100,
     "niveau": 10,
+    "attaque": 55,
+    "defense": 40,
+    "attaque_speciale": 50,
+    "defense_speciale": 50,
+    "vitesse": 90,
     "attaques": [
       {
         "nom": "Eclair",
@@ -29,6 +34,11 @@
     "type2": "Poison",
     "point_de_vie": 120,
     "niveau": 12,
+    "attaque": 49,
+    "defense": 49,
+    "attaque_speciale": 65,
+    "defense_speciale": 65,
+    "vitesse": 45,
     "attaques": [
       {
         "nom": "Fouet Lianes",
@@ -53,6 +63,11 @@
     "type1": "Feu",
     "point_de_vie": 110,
     "niveau": 10,
+    "attaque": 52,
+    "defense": 43,
+    "attaque_speciale": 60,
+    "defense_speciale": 50,
+    "vitesse": 65,
     "attaques": [
       {
         "nom": "Flammeche",
@@ -77,9 +92,14 @@
     "type1": "Eau",
     "point_de_vie": 130,
     "niveau": 10,
+    "attaque": 48,
+    "defense": 65,
+    "attaque_speciale": 50,
+    "defense_speciale": 64,
+    "vitesse": 44,
     "attaques": [
       {
-        "nom": "Pistolet à O",
+        "nom": "Pistolet a O",
         "type": "Eau",
         "categorie_attaque": "speciale",
         "precision": 100,
@@ -102,6 +122,11 @@
     "type2": "Vol",
     "point_de_vie": 140,
     "niveau": 12,
+    "attaque": 65,
+    "defense": 60,
+    "attaque_speciale": 50,
+    "defense_speciale": 60,
+    "vitesse": 71,
     "attaques": [
       {
         "nom": "Picpic",
@@ -126,6 +151,11 @@
     "type1": "Insecte",
     "point_de_vie": 100,
     "niveau": 8,
+    "attaque": 45,
+    "defense": 35,
+    "attaque_speciale": 20,
+    "defense_speciale": 20,
+    "vitesse": 45,
     "attaques": [
       {
         "nom": "Charge",
@@ -151,6 +181,11 @@
     "type2": "Poison",
     "point_de_vie": 110,
     "niveau": 8,
+    "attaque": 40,
+    "defense": 35,
+    "attaque_speciale": 30,
+    "defense_speciale": 30,
+    "vitesse": 20,
     "attaques": [
       {
         "nom": "Dard-Nuee",
@@ -175,6 +210,11 @@
     "type1": "Normal",
     "point_de_vie": 120,
     "niveau": 10,
+    "attaque": 56,
+    "defense": 35,
+    "attaque_speciale": 25,
+    "defense_speciale": 35,
+    "vitesse": 72,
     "attaques": [
       {
         "nom": "Charge",
@@ -200,6 +240,11 @@
     "type2": "Vol",
     "point_de_vie": 100,
     "niveau": 10,
+    "attaque": 60,
+    "defense": 30,
+    "attaque_speciale": 31,
+    "defense_speciale": 31,
+    "vitesse": 70,
     "attaques": [
       {
         "nom": "Picpic",
@@ -224,6 +269,11 @@
     "type1": "Poison",
     "point_de_vie": 130,
     "niveau": 12,
+    "attaque": 47,
+    "defense": 52,
+    "attaque_speciale": 40,
+    "defense_speciale": 40,
+    "vitesse": 41,
     "attaques": [
       {
         "nom": "Dard-Venin",
@@ -235,7 +285,7 @@
       },
       {
         "nom": "Morsure",
-        "type": "Ténèbres",
+        "type": "Tenebres",
         "categorie_attaque": "physique",
         "precision": 100,
         "puissance": 60,
@@ -248,6 +298,11 @@
     "type1": "Poison",
     "point_de_vie": 120,
     "niveau": 10,
+    "attaque": 57,
+    "defense": 40,
+    "attaque_speciale": 40,
+    "defense_speciale": 40,
+    "vitesse": 50,
     "attaques": [
       {
         "nom": "Dard-Venin",
@@ -272,6 +327,11 @@
     "type1": "Fee",
     "point_de_vie": 100,
     "niveau": 10,
+    "attaque": 70,
+    "defense": 70,
+    "attaque_speciale": 95,
+    "defense_speciale": 90,
+    "vitesse": 60,
     "attaques": [
       {
         "nom": "Ecras'Face",
@@ -297,6 +357,11 @@
     "type2": "Fee",
     "point_de_vie": 110,
     "niveau": 12,
+    "attaque": 45,
+    "defense": 20,
+    "attaque_speciale": 45,
+    "defense_speciale": 25,
+    "vitesse": 20,
     "attaques": [
       {
         "nom": "Ecras'Face",
@@ -322,6 +387,11 @@
     "type2": "Vol",
     "point_de_vie": 120,
     "niveau": 12,
+    "attaque": 45,
+    "defense": 35,
+    "attaque_speciale": 30,
+    "defense_speciale": 40,
+    "vitesse": 55,
     "attaques": [
       {
         "nom": "Cru-Aile",
@@ -347,6 +417,11 @@
     "type2": "Poison",
     "point_de_vie": 110,
     "niveau": 10,
+    "attaque": 50,
+    "defense": 45,
+    "attaque_speciale": 55,
+    "defense_speciale": 65,
+    "vitesse": 30,
     "attaques": [
       {
         "nom": "Fouet Lianes",
@@ -372,6 +447,11 @@
     "type2": "Plante",
     "point_de_vie": 130,
     "niveau": 12,
+    "attaque": 70,
+    "defense": 55,
+    "attaque_speciale": 45,
+    "defense_speciale": 55,
+    "vitesse": 25,
     "attaques": [
       {
         "nom": "Morsure",
@@ -396,6 +476,11 @@
     "type1": "Sol",
     "point_de_vie": 120,
     "niveau": 10,
+    "attaque": 100,
+    "defense": 95,
+    "attaque_speciale": 50,
+    "defense_speciale": 70,
+    "vitesse": 45,
     "attaques": [
       {
         "nom": "Griffe",
@@ -420,6 +505,11 @@
     "type1": "Poison",
     "point_de_vie": 140,
     "niveau": 12,
+    "attaque": 65,
+    "defense": 100,
+    "attaque_speciale": 85,
+    "defense_speciale": 70,
+    "vitesse": 75,
     "attaques": [
       {
         "nom": "Bomb-Beurk",
@@ -444,9 +534,14 @@
     "type1": "Eau",
     "point_de_vie": 130,
     "niveau": 10,
+    "attaque": 75,
+    "defense": 90,
+    "attaque_speciale": 85,
+    "defense_speciale": 45,
+    "vitesse": 22,
     "attaques": [
       {
-        "nom": "Pistolet à O",
+        "nom": "Pistolet a O",
         "type": "Eau",
         "categorie_attaque": "speciale",
         "precision": 100,
