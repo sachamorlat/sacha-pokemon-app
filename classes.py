@@ -1,6 +1,7 @@
 # Fichier de classes
 import json
 
+
 class Jeu:
     def __init__(self) -> None:
         self.joueurs: list[Joueur] = []
@@ -49,7 +50,7 @@ class Jeu:
             joueur_actuel_index = (joueur_actuel_index + 1) % 2 
          
         for joueur in self.joueurs: 
-            print(f"\nEquipe de {joueur.nom} : ")
+            print(f"\nEquipe de {joueur.nom} : \n")
             joueur.afficher_pokemons()
 
         print("\nQue le combat commence !")
@@ -73,8 +74,9 @@ class Jeu:
             for i in range(len(self.joueurs)):
                 joueur_actuel = self.joueurs[i]
                 joueur_oppose = self.joueurs[(i + 1) % 2]  # Pour alterner entre les joueurs
-                pokemon_joueur_actuel = joueur_actuel.pokemons[0]  # Premier Pokémon du joueur actuel
-                pokemon_joueur_oppose = joueur_oppose.pokemons[0]  # Premier Pokémon du joueur opposé
+                
+                pokemon_joueur_actuel = joueur_actuel.recuperer_pokemon(int(input(f"{joueur_actuel.nom} Veuillez choisir un Pokemon ")))  # Premier Pokémon du joueur actuel
+                pokemon_joueur_oppose = joueur_oppose.recuperer_pokemon(int(input(f"{joueur_oppose.nom} Veuillez choisir un Pokemon ")))  # Premier Pokémon du joueur opposé
 
                 # Logique pour le combat entre les deux Pokémon
                 while not (pokemon_joueur_actuel.est_ko() or pokemon_joueur_oppose.est_ko()):
@@ -84,7 +86,7 @@ class Jeu:
                     # Vérification si le Pokémon opposé est KO après l'attaque
                     if pokemon_joueur_oppose.est_ko():
                         print(f"{pokemon_joueur_oppose.nom} de {joueur_oppose.nom} est K.O. !")
-                        break
+                        joueur_oppose.recuperer_pokemon(int(input(f"{joueur_oppose.nom} veuillez choisir un Pokemon ")))
 
                     # Attaque du Pokémon opposé sur le Pokémon actuel
                     attaque_joueur_oppose = joueur_oppose.choisir_attaque(pokemon_joueur_oppose)
@@ -126,7 +128,7 @@ class Joueur:
         print(f"Bonjour {self.nom} ! Voici la liste des Pokémon disponibles :")
         for i, pokemon in enumerate(pokemons_disponibles, start=1):
             print(f"{i}. {pokemon.nom}")
-        choix = input("Veuillez choisir un Pokémon en indiquant son numéro : ")
+        choix = input("Veuillez choisir un Pokémon en indiquant son numéro : \n")
         try:
             choix = int(choix)
             if choix < 1 or choix > len(pokemons_disponibles):
@@ -160,20 +162,24 @@ class Joueur:
             return None
 
     def recuperer_pokemon(self, numero_pokemon: int):
+        print(f"{self.nom} voici les Pokémon disponible pour le combat :")
+        self.afficher_pokemons()
+
         if numero_pokemon < 1 or numero_pokemon > len(self.pokemons):
             print("Numéro de Pokémon invalide.")
-            return None
+            return self.recuperer_pokemon()
         else:
             pokemon_recupere = self.pokemons[numero_pokemon - 1]
-            print(f"{pokemon_recupere.nom} a été récupéré !")
+            print(f"{pokemon_recupere.nom} a été récupéré !\n")
             return pokemon_recupere
 
     def afficher_pokemons(self):
         if len(self.pokemons) > 0:
             for pokemon in self.pokemons:
-                print(
-                    f"{pokemon.nom}, Type : {pokemon.type1} {pokemon.type2}, PV : {pokemon.point_de_vie}, Niveau {pokemon.niveau}"
-                )
+                if not pokemon.est_ko():
+                    print(
+                        f"{pokemon.nom}, Type : {pokemon.type1} {pokemon.type2}, PV : {pokemon.point_de_vie}, Niveau {pokemon.niveau}\n"
+                    )
         else:
             print(f"{self.nom} ne possède pas de Pokémon.")
 
